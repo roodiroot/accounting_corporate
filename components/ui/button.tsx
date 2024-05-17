@@ -21,8 +21,7 @@ const buttonVariants = cva(
         ghost:
           'hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-800 dark:hover:text-slate-50',
         link: 'text-slate-900 underline-offset-4 hover:underline dark:text-slate-50',
-        castom:
-          'text-lg font-medium bg-[#1F2323] text-white rounded-full flex items-center justify-center gap-3 py-[6px] pr-[6px] pl-6',
+        castom: 'text-lg font-medium bg-[#1F2323] text-white rounded-full py-[6px] pr-[6px] pl-6',
         icon: 'bg-[#f6f6f6] hover:bg-[#f6f6f6]/70',
       },
       size: {
@@ -60,9 +59,11 @@ const ButtonCastom = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, ...props }, ref) => {
     return (
       <Button {...props} ref={ref} variant="castom" size="none" className={className}>
-        {props.children}
-        <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center">
-          <Icons.link />
+        <div className="flex items-center justify-center gap-3">
+          {props.children}
+          <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center">
+            <Icons.link />
+          </div>
         </div>
       </Button>
     );
