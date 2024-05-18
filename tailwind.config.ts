@@ -25,6 +25,7 @@ const config = {
         'secondary-bg': "#F6F6F6"
       },
       borderRadius: {
+        "4xl": "36px",
         "5xl": "45px"
       },
       keyframes: {

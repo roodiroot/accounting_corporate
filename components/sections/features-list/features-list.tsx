@@ -3,6 +3,33 @@ import { Icons } from '@/components/icons';
 import { Button, ButtonCastom } from '@/components/ui/button';
 import FeaturesItem from './features-item';
 import FeaturesContainer from './features-container';
+import FeaturesContent from './features-content';
+import FeaturesContentTwo from './features-content-two';
+
+const featuresList = [
+  {
+    title: 'Бухгалтерия',
+    description:
+      'Ведем учет, консультируем, сопровождаем при проверках, взаимодействуем с госорганами',
+  },
+  {
+    title: 'Налоги',
+    description:
+      'Планируем, оптимизируем, консультируем. Проведем экспресс-оценку налоговых рисков',
+  },
+  {
+    title: 'Зарплата',
+    description:
+      'Считаем зарплату, НДФЛ и страховые взносы, отвечаем на вопросы сотрудников по начислениям',
+  },
+  {
+    title: 'Проведем экспресс-оценку налоговых рисков',
+  },
+  {
+    title: 'Консультации',
+    description: 'Отвечаем на вопросы ваших сотрудников по начислениям заработной платы',
+  },
+];
 
 const FeaturesList = () => {
   return (
@@ -14,15 +41,17 @@ const FeaturesList = () => {
         </h2>
         <ButtonCastom className="hidden lg:block">Узнать подробнее</ButtonCastom>
       </div>
-      <div className="mt-12 grid grid-cols-1 gap-2 sm:mt-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        <FeaturesItem />
-        <FeaturesItem />
-        <FeaturesItem />
-        <FeaturesItem />
-        <FeaturesItem />
-        <FeaturesItem />
-        <FeaturesContainer />
-        <FeaturesItem />
+      <div className="relative mt-12 grid grid-cols-1 gap-2 sm:mt-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <Icons.logo className="absolute -z-10 bottom-20 left-1/2 -translate-x-1/2 w-[688px]" />
+        {featuresList.slice(0, 1).map((item) => (
+          <FeaturesItem key={item.title} title={item.title} description={item.description} />
+        ))}
+        <FeaturesContent />
+        {featuresList.slice(1).map((item) => (
+          <FeaturesItem key={item.title} title={item.title} description={item.description} />
+        ))}
+        <FeaturesContainer className="hidden md:inline-flex" />
+        <FeaturesContentTwo />
       </div>
     </Container>
   );

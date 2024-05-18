@@ -23,13 +23,15 @@ const buttonVariants = cva(
         link: 'text-slate-900 underline-offset-4 hover:underline dark:text-slate-50',
         castom: 'text-lg font-medium bg-[#1F2323] text-white rounded-full py-[6px] pr-[6px] pl-6',
         icon: 'bg-[#f6f6f6] hover:bg-[#f6f6f6]/70',
+        badge: 'bg-inherit  rounded-full text-lg border border-primary text-primary',
       },
       size: {
         default: 'h-9 px-4 py-2',
         sm: 'h-8 rounded-md px-3 text-xs',
         lg: 'h-10 rounded-md px-8',
-        icon: 'h-12 w-12 rounded-full bg-[#f6f6f6]',
+        icon: 'h-12 w-12 min-h-12 min-w-12 rounded-full bg-[#f6f6f6]',
         none: '',
+        badge: 'px-[10px] h-8',
       },
     },
     defaultVariants: {
