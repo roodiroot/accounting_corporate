@@ -94,7 +94,7 @@ export const Icons = {
         fill="none"
         {...props}
         xmlns="http://www.w3.org/2000/svg">
-        <path d="M1 12L12 1M12 1V12M12 1H1" stroke="#1F2323" strokeWidth="1.5" />
+        <path d="M1 12L12 1M12 1V12M12 1H1" strokeWidth="1.5" />
       </svg>
     );
   },

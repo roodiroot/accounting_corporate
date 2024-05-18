@@ -1,5 +1,8 @@
 import Container from '@/components/container';
-import { ButtonCastom } from '@/components/ui/button';
+import { Icons } from '@/components/icons';
+import { Button, ButtonCastom } from '@/components/ui/button';
+import FeaturesItem from './features-item';
+import FeaturesContainer from './features-container';
 
 const FeaturesList = () => {
   return (
@@ -10,6 +13,16 @@ const FeaturesList = () => {
           малого бизнесов из любых сфер
         </h2>
         <ButtonCastom className="hidden lg:block">Узнать подробнее</ButtonCastom>
+      </div>
+      <div className="mt-12 grid grid-cols-1 gap-2 sm:mt-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <FeaturesItem />
+        <FeaturesItem />
+        <FeaturesItem />
+        <FeaturesItem />
+        <FeaturesItem />
+        <FeaturesItem />
+        <FeaturesContainer />
+        <FeaturesItem />
       </div>
     </Container>
   );

@@ -62,7 +62,7 @@ const ButtonCastom = React.forwardRef<HTMLButtonElement, ButtonProps>(
         <div className="flex items-center justify-center gap-3">
           {props.children}
           <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center">
-            <Icons.link />
+            <Icons.link className=" stroke-primary" />
           </div>
         </div>
       </Button>
