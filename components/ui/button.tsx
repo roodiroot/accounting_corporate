@@ -4,6 +4,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
 import { Icons } from "../icons";
+import Image from "next/image";
 
 const buttonVariants = cva(
   "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-slate-950 disabled:pointer-events-none disabled:opacity-50 dark:focus-visible:ring-slate-300",
@@ -82,4 +83,47 @@ const ButtonCastom = React.forwardRef<HTMLButtonElement, ButtonProps>(
 );
 ButtonCastom.displayName = "ButtonCastom";
 
-export { Button, buttonVariants, ButtonCastom };
+const ButtonCTA = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, ...props }, ref) => {
+    return (
+      <button
+        ref={ref}
+        {...props}
+        className={cn(
+          "w-full max-w-lg h-28 rounded-5xl border-2 border-primary p-2 flex items-center",
+          className
+        )}
+      >
+        <div className="relative aspect-square rounded-4xl h-full overflow-hidden">
+          <Image
+            alt="bg_button"
+            width={200}
+            height={200}
+            src="/images/cta/bg.png"
+            className="absolute top-0 left-0 w-full h-full object-cover object-center"
+          />
+          <svg
+            width="28"
+            height="33"
+            viewBox="0 0 28 33"
+            fill="none"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          >
+            <path
+              d="M26.5 13.9019C28.5 15.0566 28.5 17.9434 26.5 19.0981L4.75 31.6554C2.75 32.8101 0.25 31.3668 0.25 29.0574L0.25 3.94263C0.25 1.63323 2.75 0.189855 4.75 1.34456L26.5 13.9019Z"
+              fill="black"
+            />
+          </svg>
+        </div>
+        <div className="flex-1 flex justify-center">
+          <span className="text-xl sm:text-2xl lg:text-3xl font-bold">
+            {props.children}
+          </span>
+        </div>
+      </button>
+    );
+  }
+);
+ButtonCTA.displayName = "ButtonCTA";
+
+export { Button, buttonVariants, ButtonCastom, ButtonCTA };

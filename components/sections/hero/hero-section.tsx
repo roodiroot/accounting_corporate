@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import { ButtonCastom } from "@/components/ui/button";
 import Benefits from "@/components/sections/hero/benefits";
+import { Icons } from "@/components/icons";
 
 const HeroSection = () => {
   return (
@@ -28,6 +29,9 @@ const HeroSection = () => {
             </p>
             <ButtonCastom className="bg-accent mt-10">
               Консультация
+              <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center">
+                <Icons.link className="stroke-primary" />
+              </div>
             </ButtonCastom>
           </div>
         </div>

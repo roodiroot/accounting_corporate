@@ -1,9 +1,14 @@
 import Container from "@/components/container";
+import ContainerBG from "@/components/container-bg";
+import Benefit from "@/components/sections/benefit/benefit";
 import Benefits from "@/components/sections/benefits/benefits";
+import CTASection from "@/components/sections/cta/cta";
 import FeaturesList from "@/components/sections/features-list/features-list";
 import Features from "@/components/sections/features/features";
 import Footer from "@/components/sections/footer/foote";
 import HeroSection from "@/components/sections/hero/hero-section";
+import Prices from "@/components/sections/prices/prices";
+import Steps from "@/components/sections/steps/steps";
 import { ButtonCastom } from "@/components/ui/button";
 
 export default function HomePage() {
@@ -23,10 +28,16 @@ export default function HomePage() {
           </ButtonCastom>
         </div>
       </Container>
-      <div className="bg-secondary-bg rounded-6xl py-8 mt-12 sm:mt-10 mx-auto max-w-screen-2xl -px-4 overflow-hidden">
+      <ContainerBG>
         <Features />
         <Benefits />
-      </div>
+      </ContainerBG>
+      <Benefit className="py-24" />
+      <CTASection />
+      <Steps />
+      <ContainerBG>
+        <Prices />
+      </ContainerBG>
       <Footer />
     </main>
   );
