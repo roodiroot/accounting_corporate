@@ -1,8 +1,7 @@
-import Image from 'next/image';
-import FeaturesContainer from './features-container';
-import { Button } from '@/components/ui/button';
-import { Icons } from '@/components/icons';
-import { Badge } from '@/components/ui/badge';
+import Image from "next/image";
+import FeaturesContainer from "./features-container";
+import { Button } from "@/components/ui/button";
+import { Icons } from "@/components/icons";
 
 const FeaturesContent = () => {
   return (
@@ -15,14 +14,26 @@ const FeaturesContent = () => {
           src="/images/features/girl.png"
           className="absolute -z-10 top-0 left-0 w-full h-full object-cover object-center"
         />
-        <Button className="ml-auto bg-white text-white" size="icon" variant="icon">
+        <Button
+          className="ml-auto bg-white text-white"
+          size="icon"
+          variant="icon"
+        >
           <Icons.link className="stroke-primary" />
         </Button>
         <div className="flex gap-1 flex-1 items-end">
-          <Button className="text-white border-white" size="badge" variant="badge">
+          <Button
+            className="text-white border-white"
+            size="badge"
+            variant="badge"
+          >
             Налоги
           </Button>
-          <Button className="text-white border-white" size="badge" variant="badge">
+          <Button
+            className="text-white border-white"
+            size="badge"
+            variant="badge"
+          >
             Учет
           </Button>
         </div>

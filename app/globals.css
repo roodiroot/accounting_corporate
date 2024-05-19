@@ -12,6 +12,7 @@ body {
   color: var(--primary);
   font-size: 18px;
   line-height: 28px;
+  background: #FCFCFC;
 }
 
 h1,

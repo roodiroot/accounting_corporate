@@ -1,8 +1,16 @@
-import Link from 'next/link';
+import { cn } from "@/lib/utils";
+import Link from "next/link";
 
-const MenuList = () => {
+interface MenuListProps extends React.HTMLAttributes<HTMLUListElement> {}
+
+const MenuList: React.FC<MenuListProps> = ({ className, ...props }) => {
   return (
-    <ul className="hidden lg:flex gap-8 text-xl text-secondary pt-2">
+    <ul
+      className={cn(
+        "hidden lg:flex gap-8 text-xl text-secondary pt-2",
+        className
+      )}
+    >
       <li>
         <Link href="/service">Услуги</Link>
       </li>

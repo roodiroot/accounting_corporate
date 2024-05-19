@@ -1,15 +1,20 @@
-import { Icons } from '@/components/icons';
-import { Button } from '@/components/ui/button';
-import FeaturesContainer from './features-container';
+import { Icons } from "@/components/icons";
+import { Button } from "@/components/ui/button";
+import FeaturesContainer from "./features-container";
 
 interface FeaturesItemProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string;
   description?: string;
 }
 
-const FeaturesItem: React.FC<FeaturesItemProps> = ({ title, description, ...props }) => {
+const FeaturesItem: React.FC<FeaturesItemProps> = ({
+  title,
+  description,
+  className,
+  ...props
+}) => {
   return (
-    <FeaturesContainer>
+    <FeaturesContainer {...props} className={className}>
       <div className="bg-secondary-bg rounded-5xl overflow-hidden p-8 w-full h-full flex flex-col">
         <Button className="bg-accent text-white" size="icon" variant="icon">
           <Icons.link className="stroke-white" />

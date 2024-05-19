@@ -1,8 +1,7 @@
-import Image from 'next/image';
-import FeaturesContainer from './features-container';
-import { Button } from '@/components/ui/button';
-import { Icons } from '@/components/icons';
-import { Badge } from '@/components/ui/badge';
+import Image from "next/image";
+import FeaturesContainer from "./features-container";
+import { Button } from "@/components/ui/button";
+import { Icons } from "@/components/icons";
 
 const FeaturesContentTwo = () => {
   return (
@@ -26,8 +25,14 @@ const FeaturesContentTwo = () => {
           </div>
         </div>
         <div className="flex-1 w-full p-6 flex items-end">
-          <h4 className="text-2xl text-white">Готовим и сдаем всю необходимую отчетность</h4>
-          <Button className="ml-auto bg-white text-white" size="icon" variant="icon">
+          <h4 className="text-2xl text-white">
+            Готовим и сдаем всю необходимую отчетность
+          </h4>
+          <Button
+            className="ml-auto bg-white text-white"
+            size="icon"
+            variant="icon"
+          >
             <Icons.link className="stroke-primary" />
           </Button>
         </div>
