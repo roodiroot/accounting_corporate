@@ -5,7 +5,7 @@ import Image from "next/image";
 const CTASection = () => {
   return (
     <Container>
-      <div className="relative  bg-secondary-bg rounded-6xl  p-4 -mx-4 max-w-2xl sm:p-8 flex flex-col sm:mx-auto lg:max-w-none lg:flex-row overflow-hidden">
+      <div className="relative  bg-secondary-bg rounded-6xl  p-4 -mx-4 max-w-xl sm:p-8 flex flex-col sm:mx-auto lg:max-w-none lg:flex-row overflow-hidden">
         <div className="flex-[50%]">
           <h3 className="text-3xl md:text-4xl">
             Хотите бухгалтерию, которая уже{" "}

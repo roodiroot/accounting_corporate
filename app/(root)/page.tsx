@@ -6,6 +6,7 @@ import CTASection from "@/components/sections/cta/cta";
 import FeaturesList from "@/components/sections/features-list/features-list";
 import Features from "@/components/sections/features/features";
 import Footer from "@/components/sections/footer/foote";
+import FormSection from "@/components/sections/form-section/form-section";
 import HeroSection from "@/components/sections/hero/hero-section";
 import Prices from "@/components/sections/prices/prices";
 import Steps from "@/components/sections/steps/steps";
@@ -38,6 +39,7 @@ export default function HomePage() {
       <ContainerBG>
         <Prices />
       </ContainerBG>
+      <FormSection />
       <Footer />
     </main>
   );
