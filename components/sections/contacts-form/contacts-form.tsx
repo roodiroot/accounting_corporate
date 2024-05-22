@@ -14,27 +14,29 @@ import {
 } from "@/components/ui/form";
 import { cn } from "@/lib/utils";
 import { Icons } from "@/components/icons";
-import { formSectionSchema } from "@/schemas";
+import { formContactsSchema } from "@/schemas";
 import { Input } from "@/components/ui/input";
 import { ButtonCastom } from "@/components/ui/button";
 import InputPhoneMask from "@/components/ui/input-phone-mask";
+import { Textarea } from "@/components/ui/textarea";
 
-interface FormClientProps extends React.HTMLAttributes<HTMLFormElement> {}
+interface ContactsFormProps extends React.HTMLAttributes<HTMLFormElement> {}
 
-const FormClient: React.FC<FormClientProps> = ({ className, ...props }) => {
-  const form = useForm<z.infer<typeof formSectionSchema>>({
-    resolver: zodResolver(formSectionSchema),
+const ContactsForm: React.FC<ContactsFormProps> = ({ className, ...props }) => {
+  const form = useForm<z.infer<typeof formContactsSchema>>({
+    resolver: zodResolver(formContactsSchema),
     defaultValues: {
       name: "",
       phone: "",
+      email: "",
+      message: "",
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSectionSchema>) {
+  function onSubmit(values: z.infer<typeof formContactsSchema>) {
     console.log(values);
     form.reset();
   }
-
   return (
     <Form {...form}>
       <form
@@ -84,6 +86,36 @@ const FormClient: React.FC<FormClientProps> = ({ className, ...props }) => {
             </FormItem>
           )}
         />
+        <FormField
+          control={form.control}
+          name="email"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Email*</FormLabel>
+              <FormControl>
+                <Input
+                  className=""
+                  placeholder="Введите Ваш email"
+                  {...field}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="message"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Сообщение*</FormLabel>
+              <FormControl>
+                <Textarea rows={4} {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
         <div className="">
           <ButtonCastom className="bg-accent mt-2">
             Отправить
@@ -96,5 +128,4 @@ const FormClient: React.FC<FormClientProps> = ({ className, ...props }) => {
     </Form>
   );
 };
-
-export default FormClient;
+export default ContactsForm;

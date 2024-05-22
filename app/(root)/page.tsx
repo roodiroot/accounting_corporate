@@ -5,7 +5,7 @@ import Benefits from "@/components/sections/benefits/benefits";
 import CTASection from "@/components/sections/cta/cta";
 import FeaturesList from "@/components/sections/features-list/features-list";
 import Features from "@/components/sections/features/features";
-import Footer from "@/components/sections/footer/foote";
+import Footer from "@/components/sections/footer/footer";
 import FormSection from "@/components/sections/form-section/form-section";
 import HeroSection from "@/components/sections/hero/hero-section";
 import Prices from "@/components/sections/prices/prices";
@@ -40,7 +40,6 @@ export default function HomePage() {
         <Prices />
       </ContainerBG>
       <FormSection />
-      <Footer />
     </main>
   );
 }

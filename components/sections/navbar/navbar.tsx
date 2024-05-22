@@ -5,7 +5,7 @@ import MenuList from "@/components/sections/navbar/menu-list";
 
 export const NavBar = () => {
   return (
-    <div className="absolute top-0 left-0 w-full">
+    <div className="absolute z-10 top-0 left-0 w-full">
       <div className="w-full mx-auto max-w-screen-2xl px-4 pt-4 lg:pt-8 lg:px-8">
         <div className="flex items-center justify-between">
           <nav className="flex gap-8 items-center">

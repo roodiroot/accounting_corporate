@@ -1,7 +1,7 @@
 import Container from "@/components/container";
+import ServicesSection from "@/components/sections/services/services-section";
 import { ButtonCastom } from "@/components/ui/button";
-import ServicesSection from "../services/services-section";
-import PriceItemContent from "./price-item-content";
+
 const priceList = [
   {
     id: 1,
@@ -43,38 +43,33 @@ const priceList = [
     price: "от 11 300 ₽",
     description: "в месяц (ООО на ОСНО)",
   },
+  {
+    id: 8,
+    title: "Бухгалтерский, налоговый и кадровый учёт",
+    price: "от 11 300 ₽",
+    description: "в месяц (ООО на ОСНО)",
+  },
 ];
 
-const Prices = () => {
+export default function ServicesPage() {
   return (
-    <Container>
+    <Container className="pb-32 pt-32 lg:pt-40">
       <div className="overflow-hidden flex justify-between items-start">
-        <h2 className="text-3xl max-w-2xl lg:text-4xl">
-          Вам не потребуется оплачивать новые программы.{" "}
-          <span className="text-accent">У нас все есть.</span>
-        </h2>
+        <h1 className="text-3xl max-w-2xl lg:text-4xl">
+          Актуальные <span className="text-accent">цены</span> на наши услуги.
+        </h1>
         <ButtonCastom className="hidden lg:block pr-6">
           Посмотреть прайс
         </ButtonCastom>
       </div>
-      <ServicesSection list={priceList} className="mt-12 sm:mt-10">
-        <PriceItemContent
-          title="Бесплатно"
-          description="Для заключивших договор до конца Мая*"
-          className="md:odd:ml-auto md:odd:mr-0 md:even:mr-auto md:even:ml-0 lg:even:mx-auto lg:odd:mx-auto"
-        />
-      </ServicesSection>
-      <div className="mt-4 text-base max-w-xl text-secondary">
-        *Акция действует на <span className="text-accent">первые 2 месяца</span>{" "}
-        обслуживания, для компаний заключивших договор до 30.05.2024.
-        Подробности акции уточняйте{" "}
-        <span className="text-accent">
-          {" "}
-          по телефону <a href="tel:79999999999">+7 999 999 99 99</a>
-        </span>
-      </div>
+      <ServicesSection
+        list={priceList}
+        className="mt-12 sm:mt-10"
+        bgCard="bg-secondary-bg"
+      />
+      <ButtonCastom className="mt-12 sm:mt-10 block pr-6 lg:hidden">
+        Посмотреть прайс
+      </ButtonCastom>
     </Container>
   );
-};
-
-export default Prices;
+}

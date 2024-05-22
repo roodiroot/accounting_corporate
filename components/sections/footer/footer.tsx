@@ -5,6 +5,7 @@ import { Button, ButtonCastom } from "@/components/ui/button";
 import { Icons } from "@/components/icons";
 import { Phone } from "lucide-react";
 import FormFooter from "./form-footer";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -36,7 +37,7 @@ const Footer = () => {
         <div className="pt-32 pb-8 flex flex-col gap-y-20 border-b border-white/20 md:flex-row md:items-end md:gap-x-4">
           <div className="max-w-2xl">
             <h2 className="text-4xl font-bold tracking-tight sm:text-6xl text-white">
-              Надежный партнер в бухгалтерском учете
+              Надежный эксперт в бухгалтерском учете
             </h2>
           </div>
           <div className="flex-1 flex flex-col gap-y-4">
@@ -64,7 +65,7 @@ const Footer = () => {
               </Button>
             </div>
             <div className="flex md:justify-end">
-              <FormFooter />
+              <FormFooter className="md:ml-auto max-w-sm" />
             </div>
           </div>
         </div>
@@ -72,7 +73,9 @@ const Footer = () => {
           <p className="text-base">© ООО Партнер 2024. All right reserved</p>
           <div className=" flex flex-col md:flex-row md:gap-x-8 md:ml-auto">
             <p>Карьера в Партнере</p>
-            <p>Политика конфиденциальности</p>
+            <Link href="/doc/privacy-policy">
+              <p>Политика конфиденциальности</p>
+            </Link>
           </div>
         </div>
       </Container>

@@ -1,23 +1,31 @@
 import { Button } from "@/components/ui/button";
 import FeaturesContainer from "../features-list/features-container";
 import { Icons } from "@/components/icons";
+import { cn } from "@/lib/utils";
 
-interface PriceItemProps extends React.HTMLAttributes<HTMLDivElement> {
+interface ServiceItemProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string;
   price?: string;
   description?: string;
+  bgCard?: string;
 }
 
-const PriceItem: React.FC<PriceItemProps> = ({
+const ServiceItem: React.FC<ServiceItemProps> = ({
   title,
   price,
   description,
+  bgCard,
   className,
   ...props
 }) => {
   return (
     <FeaturesContainer {...props} className={className}>
-      <div className="bg-white rounded-5xl overflow-hidden p-8 w-full h-full flex flex-col">
+      <div
+        className={cn(
+          "bg-white rounded-5xl overflow-hidden p-8 w-full h-full flex flex-col",
+          bgCard
+        )}
+      >
         <Button className="bg-accent text-white" size="icon" variant="icon">
           <Icons.link className="stroke-white" />
         </Button>
@@ -31,4 +39,4 @@ const PriceItem: React.FC<PriceItemProps> = ({
   );
 };
 
-export default PriceItem;
+export default ServiceItem;

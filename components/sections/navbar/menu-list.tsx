@@ -12,7 +12,7 @@ const MenuList: React.FC<MenuListProps> = ({ className, ...props }) => {
       )}
     >
       <li>
-        <Link href="/service">Услуги</Link>
+        <Link href="/services">Услуги</Link>
       </li>
       <li>
         <Link href="/about">О нас</Link>

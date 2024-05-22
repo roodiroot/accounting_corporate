@@ -1,4 +1,5 @@
-import NavBar from '@/components/sections/navbar/navbar';
+import Footer from "@/components/sections/footer/footer";
+import NavBar from "@/components/sections/navbar/navbar";
 
 export default function Layout({
   children,
@@ -9,6 +10,7 @@ export default function Layout({
     <div className="">
       <NavBar />
       {children}
+      <Footer />
     </div>
   );
 }
