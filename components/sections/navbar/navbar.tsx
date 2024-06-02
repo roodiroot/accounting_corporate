@@ -25,7 +25,7 @@ export const NavBar = () => {
             >
               <a
                 className="inline-flex sm:hidden"
-                href={`tel:${process.env.PHOME_1}`}
+                href={`tel:${process.env.PHONE_1}`}
               >
                 <Phone className=" stroke-white" />
               </a>
