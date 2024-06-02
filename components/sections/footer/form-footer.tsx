@@ -9,6 +9,7 @@ import { Icons } from "@/components/icons";
 import { formPromptSchema } from "@/schemas";
 import { Form, FormControl } from "@/components/ui/form";
 import InputPhoneMask from "@/components/ui/input-phone-mask";
+import { sendMessagePropmpt } from "@/actions/sender";
 
 interface FormFooterProps extends React.HTMLAttributes<HTMLFormElement> {}
 
@@ -20,9 +21,14 @@ const FormFooter: React.FC<FormFooterProps> = ({ className, ...props }) => {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formPromptSchema>) {
-    console.log(values);
-    form.reset();
+  async function onSubmit(values: z.infer<typeof formPromptSchema>) {
+    await sendMessagePropmpt(values)
+      .then((e) => {
+        console.log(e);
+      })
+      .finally(() => {
+        form.reset();
+      });
   }
 
   return (

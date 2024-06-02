@@ -27,7 +27,7 @@ const Footer = () => {
                   </div>
                 </ButtonCastom>
               </ButtonOpenModal>
-              <Button size="icon" variant="icon" className=" bg-white">
+              <Button asChild size="icon" variant="icon" className=" bg-white">
                 <a
                   className="inline-flex sm:hidden"
                   href={`tel:${process.env.PHOME_1}`}
@@ -46,33 +46,36 @@ const Footer = () => {
           </div>
           <div className="flex-1 flex flex-col gap-y-4">
             <div className="flex gap-1 md:ml-auto">
-              <a target="_blank" href={process.env.TELEGRAM}>
-                <Button
-                  size="icon"
-                  variant="icon"
-                  className="bg-[#3D3C3A] hover:bg-[#3D3C3A]/90 group"
-                >
+              <Button
+                asChild
+                size="icon"
+                variant="icon"
+                className="bg-[#3D3C3A] hover:bg-[#3D3C3A]/90 group"
+              >
+                <a target="_blank" href={process.env.TELEGRAM}>
                   <Icons.telegram className="fill-white group-hover:scale-110" />
-                </Button>
-              </a>
-              <a target="_blank" href={process.env.WHATSAPP}>
-                <Button
-                  size="icon"
-                  variant="icon"
-                  className="bg-[#3D3C3A] hover:bg-[#3D3C3A]/90 group"
-                >
+                </a>
+              </Button>
+              <Button
+                asChild
+                size="icon"
+                variant="icon"
+                className="bg-[#3D3C3A] hover:bg-[#3D3C3A]/90 group"
+              >
+                <a target="_blank" href={process.env.WHATSAPP}>
                   <Icons.whatsapp className="fill-white group-hover:scale-110" />
-                </Button>
-              </a>
-              <a target="_blank" href={process.env.VKONTAKTE}>
-                <Button
-                  size="icon"
-                  variant="icon"
-                  className="bg-[#3D3C3A] hover:bg-[#3D3C3A]/90 group"
-                >
+                </a>
+              </Button>
+              <Button
+                asChild
+                size="icon"
+                variant="icon"
+                className="bg-[#3D3C3A] hover:bg-[#3D3C3A]/90 group"
+              >
+                <a target="_blank" href={process.env.VKONTAKTE}>
                   <Icons.vk className="fill-white group-hover:scale-110" />
-                </Button>
-              </a>
+                </a>
+              </Button>
             </div>
             <div className="flex md:justify-end">
               <FormFooter className="md:ml-auto max-w-sm" />

@@ -16,6 +16,7 @@ import { cn } from "@/lib/utils";
 import { Icons } from "@/components/icons";
 import { formSectionSchema } from "@/schemas";
 import { Input } from "@/components/ui/input";
+import { sendMessagePopup } from "@/actions/sender";
 import { ButtonCastom } from "@/components/ui/button";
 import InputPhoneMask from "@/components/ui/input-phone-mask";
 
@@ -30,9 +31,12 @@ const FormClient: React.FC<FormClientProps> = ({ className, ...props }) => {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSectionSchema>) {
-    console.log(values);
-    form.reset();
+  async function onSubmit(values: z.infer<typeof formSectionSchema>) {
+    await sendMessagePopup(values)
+      .then((d) => {})
+      .finally(() => {
+        form.reset();
+      });
   }
 
   return (

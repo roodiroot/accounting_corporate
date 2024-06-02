@@ -1,6 +1,7 @@
 import Container from "@/components/container";
 import { Icons } from "@/components/icons";
 import ContactsForm from "@/components/sections/contacts-form/contacts-form";
+import { phone } from "@/lib/phone";
 
 export const metadata = {
   title: "Контакты компании Партнер",
@@ -29,11 +30,11 @@ export default function ContactsPage() {
         </svg>
         <div className="flex-[50%]">
           <div className="max-w-xl mx-auto lg:mx-0">
-            <h1 className="text-5xl md:text-6xl">
+            <h1 className="text-5xl py-2 md:text-6xl">
               Контакты
               <Icons.link className="stroke-primary inline ml-4 h-8 w-8 rotate-90" />
             </h1>
-            <div className="space-y-9 mt-9 text-secondary">
+            <div className="space-y-9 mt-7 text-secondary">
               <address className="text-2xl leading-8 not-italic">
                 <div className="">г.Рузаевка, ул Ленина, д.45</div>
                 <div className="">
@@ -56,8 +57,8 @@ export default function ContactsPage() {
                   </a>
                 </div>
                 <div>
-                  <a className="" href="tel:79176957962">
-                    +7 (917) 695-79-62
+                  <a className="" href={`tel:${process.env.PHONE_1}`}>
+                    {phone(process.env.PHONE_1)}
                   </a>
                 </div>
               </address>

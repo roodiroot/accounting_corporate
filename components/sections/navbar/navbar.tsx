@@ -1,10 +1,11 @@
+import { phone } from "@/lib/phone";
 import { Icons } from "@/components/icons";
 import Logo from "@/components/sections/navbar/logo";
-import { Button, ButtonCastom } from "@/components/ui/button";
 import MenuList from "@/components/sections/navbar/menu-list";
-import MobilMenu from "./mobil-menu";
-import ButtonOpenModal from "../absolute/modal/button-open-modal";
-import { phone } from "@/lib/phone";
+import { Button, ButtonCastom } from "@/components/ui/button";
+import MobilMenu from "@/components/sections/navbar/mobil-menu";
+import ButtonOpenModal from "@/components/sections/absolute/modal/button-open-modal";
+import { Phone } from "lucide-react";
 
 export const NavBar = () => {
   return (
@@ -16,11 +17,29 @@ export const NavBar = () => {
             <MenuList />
           </nav>
           <div className="flex gap-1 ">
-            <a target="_blank" href={process.env.WHATSAPP}>
-              <Button size="icon" variant="icon">
+            <Button
+              asChild
+              size="icon"
+              variant="icon"
+              className="bg-[#3D3C3A] hover:bg-[#3D3C3A] sm:hidden"
+            >
+              <a
+                className="inline-flex sm:hidden"
+                href={`tel:${process.env.PHOME_1}`}
+              >
+                <Phone className=" stroke-white" />
+              </a>
+            </Button>
+            <Button
+              asChild
+              size="icon"
+              variant="icon"
+              className="hidden sm:inline-flex"
+            >
+              <a target="_blank" href={process.env.WHATSAPP}>
                 <Icons.whatsapp className="fill-[#8A8A8A]" />
-              </Button>
-            </a>
+              </a>
+            </Button>
             <ButtonOpenModal
               title="Обратная связь"
               description={`Заполните форму обратной связи или позвоните по телефону ${phone(

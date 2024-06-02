@@ -19,6 +19,7 @@ import { Input } from "@/components/ui/input";
 import { ButtonCastom } from "@/components/ui/button";
 import InputPhoneMask from "@/components/ui/input-phone-mask";
 import { Textarea } from "@/components/ui/textarea";
+import { sendMessageFedback } from "@/actions/sender";
 
 interface ContactsFormProps extends React.HTMLAttributes<HTMLFormElement> {}
 
@@ -33,9 +34,14 @@ const ContactsForm: React.FC<ContactsFormProps> = ({ className, ...props }) => {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formContactsSchema>) {
-    console.log(values);
-    form.reset();
+  async function onSubmit(values: z.infer<typeof formContactsSchema>) {
+    await sendMessageFedback(values)
+      .then((e) => {
+        console.log(e);
+      })
+      .finally(() => {
+        form.reset();
+      });
   }
   return (
     <Form {...form}>
