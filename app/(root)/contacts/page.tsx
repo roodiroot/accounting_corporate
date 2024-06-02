@@ -2,6 +2,12 @@ import Container from "@/components/container";
 import { Icons } from "@/components/icons";
 import ContactsForm from "@/components/sections/contacts-form/contacts-form";
 
+export const metadata = {
+  title: "Контакты компании Партнер",
+  description:
+    "Свяжитесь с нами для получения профессиональных бухгалтерских услуг. Наши контакты: адрес, телефон, электронная почта.",
+};
+
 export default function ContactsPage() {
   return (
     <Container className="pb-32 pt-32 lg:pt-40">

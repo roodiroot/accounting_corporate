@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "Защита персональных данных - Партнер",
+  description:
+    "Ознакомьтесь с нашей политикой конфиденциальности. Компания Партнер строго соблюдает правила защиты персональных данных клиентов.",
+};
+
 export default function PrivacyPage() {
   return (
     <div className="relative bg-white py-24 sm:py-32">

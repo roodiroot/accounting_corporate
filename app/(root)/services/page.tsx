@@ -1,7 +1,7 @@
 import Container from "@/components/container";
-import ButtonOpenModal from "@/components/sections/absolute/modal/button-open-modal";
-import ServicesSection from "@/components/sections/services/services-section";
 import { ButtonCastom } from "@/components/ui/button";
+import ServicesSection from "@/components/sections/services/services-section";
+import ButtonOpenModal from "@/components/sections/absolute/modal/button-open-modal";
 
 const priceList = [
   {
@@ -51,6 +51,12 @@ const priceList = [
     description: "в месяц (ООО на ОСНО)",
   },
 ];
+
+export const metadata = {
+  title: "Цены на бухгалтерские услуги",
+  description:
+    "Узнайте цены на профессиональные бухгалтерские услуги от компании Партнер. Прозрачные и конкурентоспособные тарифы на все виды бухгалтерского аутсорсинга.",
+};
 
 export default function ServicesPage() {
   return (

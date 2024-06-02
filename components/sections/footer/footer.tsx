@@ -27,14 +27,14 @@ const Footer = () => {
                   </div>
                 </ButtonCastom>
               </ButtonOpenModal>
-              <a
-                className="inline-flex sm:hidden"
-                href={`tel:${process.env.PHOME_1}`}
-              >
-                <Button size="icon" variant="icon" className=" bg-white">
+              <Button size="icon" variant="icon" className=" bg-white">
+                <a
+                  className="inline-flex sm:hidden"
+                  href={`tel:${process.env.PHOME_1}`}
+                >
                   <Phone className=" stroke-primary" />
-                </Button>
-              </a>
+                </a>
+              </Button>
             </nav>
           </div>
         </div>

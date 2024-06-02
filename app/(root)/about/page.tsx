@@ -5,6 +5,12 @@ import Container from "@/components/container";
 import { ButtonCastom } from "@/components/ui/button";
 import ButtonOpenModal from "@/components/sections/absolute/modal/button-open-modal";
 
+export const metadata = {
+  title: "О компании Партнер",
+  description:
+    "Узнайте больше о компании Партнер. Мы специализируемся на аутсорсинге бухгалтерских услуг, помогая компаниям сосредоточиться на их основном бизнесе.",
+};
+
 export default function AboutPage() {
   return (
     <Container className="pb-32 pt-32 lg:pt-40 relative">

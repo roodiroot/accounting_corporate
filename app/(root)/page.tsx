@@ -1,18 +1,17 @@
+import { phone } from "@/lib/phone";
 import Container from "@/components/container";
 import ContainerBG from "@/components/container-bg";
-import ButtonOpenModal from "@/components/sections/absolute/modal/button-open-modal";
-import Benefit from "@/components/sections/benefit/benefit";
-import Benefits from "@/components/sections/benefits/benefits";
-import CTASection from "@/components/sections/cta/cta";
-import FeaturesList from "@/components/sections/features-list/features-list";
-import Features from "@/components/sections/features/features";
-import Footer from "@/components/sections/footer/footer";
-import FormSection from "@/components/sections/form-section/form-section";
-import HeroSection from "@/components/sections/hero/hero-section";
-import Prices from "@/components/sections/prices/prices";
 import Steps from "@/components/sections/steps/steps";
 import { ButtonCastom } from "@/components/ui/button";
-import { phone } from "@/lib/phone";
+import CTASection from "@/components/sections/cta/cta";
+import Prices from "@/components/sections/prices/prices";
+import Benefit from "@/components/sections/benefit/benefit";
+import Benefits from "@/components/sections/benefits/benefits";
+import Features from "@/components/sections/features/features";
+import HeroSection from "@/components/sections/hero/hero-section";
+import FormSection from "@/components/sections/form-section/form-section";
+import FeaturesList from "@/components/sections/features-list/features-list";
+import ButtonOpenModal from "@/components/sections/absolute/modal/button-open-modal";
 
 export default function HomePage() {
   return (
