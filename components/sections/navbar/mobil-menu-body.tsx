@@ -12,7 +12,7 @@ const MobilMenuBody: React.FC<MobilMenuBodyProps> = ({ linkList, className, ...p
       <ul className="mt-10 space-y-4">
         {linkList.map((item) => (
           <li key={item.name} className="py-2">
-            <Link href={item.href} className=" font-gropled text-4xl">
+            <Link href={item.href} className="font-bold tracking-tight text-4xl overflow-auto">
               <DrawerClose>{item.name}</DrawerClose>
             </Link>
           </li>
