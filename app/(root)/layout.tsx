@@ -1,3 +1,4 @@
+import AllAbsolute from "@/components/sections/absolute/all-absolute";
 import Footer from "@/components/sections/footer/footer";
 import NavBar from "@/components/sections/navbar/navbar";
 

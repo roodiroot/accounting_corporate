@@ -1,10 +1,20 @@
-import Container from "@/components/container";
+import Image from "next/image";
+
 import { Icons } from "@/components/icons";
+import Container from "@/components/container";
 import { ButtonCastom } from "@/components/ui/button";
+import ButtonOpenModal from "@/components/sections/absolute/modal/button-open-modal";
 
 export default function AboutPage() {
   return (
-    <Container className="pb-32 pt-32 lg:pt-40">
+    <Container className="pb-32 pt-32 lg:pt-40 relative">
+      <Image
+        alt="girl_cta"
+        width={1000}
+        height={1000}
+        src="/images/contacts/png.png"
+        className="absolute -bottom-[5rem] opacity-70  -left-20 w-[920px] object-cover"
+      />
       <div className="relative flex flex-col gap-y-14 lg:gap-x-4 lg:flex-row overflow-hidden">
         <svg
           width="864"
@@ -21,20 +31,24 @@ export default function AboutPage() {
             strokeLinecap="round"
           />
         </svg>
+
         <div className="flex-[50%]">
-          <h1 className="text-5xl md:text-6xl">
-            Наша история
-            <Icons.link className="stroke-primary inline ml-4 h-8 w-8 rotate-90" />
-          </h1>
+          <div className="max-w-xl mx-auto lg:mx-0">
+            <h1 className="text-5xl md:text-6xl">
+              Наша история
+              <Icons.link className="stroke-primary inline ml-4 h-8 w-8 rotate-90" />
+            </h1>
+          </div>
         </div>
         <div className="flex-[50%]">
           <div className="max-w-xl mx-auto space-y-8 md:space-y-10 lg:mx-0">
             <p className="text-secondary">
-              Компания <span className="text-accent">"Партнер"</span> уже более
-              14 лет успешно работает на рынке бухгалтерского аутсорсинга. С
-              момента основания в 2010 году, мы стремимся предоставлять нашим
-              клиентам высококачественные бухгалтерские услуги, которые помогают
-              бизнесу процветать и достигать новых высот.
+              Компания <span className="text-accent">&quot;Партнер&ldquo;</span>{" "}
+              уже более 14 лет успешно работает на рынке бухгалтерского
+              аутсорсинга. С момента основания в 2010 году, мы стремимся
+              предоставлять нашим клиентам высококачественные бухгалтерские
+              услуги, которые помогают бизнесу процветать и достигать новых
+              высот.
             </p>
             <p className="text-xl">
               Мы работаем с полной отдачей, чтобы наши клиенты могли
@@ -54,12 +68,14 @@ export default function AboutPage() {
               чтобы узнать больше о том, как мы можем помочь вашему бизнесу
               процветать!
             </p>
-            <ButtonCastom className="bg-accent">
-              Консультация
-              <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center">
-                <Icons.link className="stroke-primary" />
-              </div>
-            </ButtonCastom>
+            <ButtonOpenModal className="block">
+              <ButtonCastom className="bg-accent">
+                Консультация
+                <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center">
+                  <Icons.link className="stroke-primary" />
+                </div>
+              </ButtonCastom>
+            </ButtonOpenModal>
           </div>
         </div>
       </div>

@@ -4,18 +4,21 @@ import { ButtonCastom } from "@/components/ui/button";
 import FeaturesItem from "../features-list/features-item";
 import FeaturesContainer from "../features-list/features-container";
 import FeaturesContentThree from "../features-list/features-content-three";
+import ButtonOpenModal from "../absolute/modal/button-open-modal";
 
 const Benefits = () => {
   return (
     <Container className="pt-24 lg:pt-36">
       <div className="flex justify-between items-start">
-        <h2 className="text-3xl max-w-2xl lg:text-4xl">
+        <h2 className="text-3xl max-w-2xl mx-auto lg:mx-0 lg:text-4xl">
           Можем <span className="text-accent">всё</span>, что может для Вас
           потребоваться
         </h2>
-        <ButtonCastom className="hidden lg:block pr-6">
-          Узнать подробнее
-        </ButtonCastom>
+        <ButtonOpenModal>
+          <ButtonCastom className="hidden lg:block pr-6">
+            Узнать подробнее
+          </ButtonCastom>
+        </ButtonOpenModal>
       </div>
       <div className="relative mt-12 grid grid-cols-1 gap-2 sm:mt-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         <svg

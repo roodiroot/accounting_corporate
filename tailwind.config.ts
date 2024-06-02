@@ -18,6 +18,9 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        gropled: "var(--font-gropled)",
+      },
       colors: {
         primary: "#282828",
         secondary: "#5a5a5a",

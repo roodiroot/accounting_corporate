@@ -2,6 +2,8 @@ import Container from "@/components/container";
 import { Icons } from "@/components/icons";
 import { Button, ButtonCastom } from "@/components/ui/button";
 import Image from "next/image";
+import ButtonOpenModal from "../absolute/modal/button-open-modal";
+import { phone } from "@/lib/phone";
 
 const Features = () => {
   return (
@@ -31,13 +33,18 @@ const Features = () => {
               </h3>
             </div>
             <div className="flex-1 flex items-end">
-              <Button
-                className="bg-primary text-white"
-                size="icon"
-                variant="icon"
+              <ButtonOpenModal
+                title="Нужны гарантии?"
+                description="Задайте этот вопрос нашим экспертам, и мы поможем вам выбрать лучший вариант страхования и пропишем его в договоре."
               >
-                <Icons.link className="stroke-white" />
-              </Button>
+                <Button
+                  className="bg-primary text-white"
+                  size="icon"
+                  variant="icon"
+                >
+                  <Icons.link className="stroke-white" />
+                </Button>
+              </ButtonOpenModal>
             </div>
           </div>
         </div>

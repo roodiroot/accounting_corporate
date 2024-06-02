@@ -3,6 +3,8 @@ import { Icons } from "@/components/icons";
 import { Button, ButtonCastom } from "@/components/ui/button";
 import Image from "next/image";
 import StepItem from "./step";
+import ButtonOpenModal from "../absolute/modal/button-open-modal";
+import StapAction from "./stap-action";
 
 const steps = [
   {
@@ -43,13 +45,15 @@ const Steps = () => {
         />
       </svg>
       <div className="flex justify-between items-start">
-        <h2 className="text-3xl max-w-2xl lg:text-4xl">
+        <h2 className="text-3xl max-w-2xl mx-auto lg:mx-0 lg:text-4xl">
           Всего <span className="text-accent">несколько шагов</span> что бы
           перевести бухгалтерию на аутсорс.
         </h2>
-        <ButtonCastom className="hidden lg:block pr-6">
-          Узнать подробнее
-        </ButtonCastom>
+        <ButtonOpenModal>
+          <ButtonCastom className="hidden lg:block pr-6">
+            Узнать подробнее
+          </ButtonCastom>
+        </ButtonOpenModal>
       </div>
       <div className="relative mt-12 grid grid-cols-1 gap-2 sm:mt-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {steps.map((item) => (
@@ -60,29 +64,12 @@ const Steps = () => {
             description={item.description}
           />
         ))}
-        <div className="relative w-full max-w-[380px] mx-auto aspect-[1/1.18] rounded-5xl p-8 flex flex-col overflow-hidden group cursor-pointer shadow-lg md:mx-0">
-          <Image
-            alt="bg-step_4"
-            width={400}
-            height={400}
-            src="/images/steps/bg.png"
-            className="absolute -z-10 top-0 left-0 w-full h-full object-cover"
-          />
-          <div className="flex-1 flex justify-between">
-            <div className="text-[80px] text-white font-bold">4</div>
-            <Button
-              className="bg-white group-hover:bg-white/70"
-              size="icon"
-              variant="icon"
-            >
-              <Icons.link className="stroke-accent" />
-            </Button>
-          </div>
-          <h4 className="text-4xl text-white">
-            Начинаем работать
-            <Icons.link className="ml-4 stroke-white inline" />
-          </h4>
-        </div>
+        <ButtonOpenModal
+          title="Готовы к сотрудничеству?"
+          description="Заполните форму ниже и мы свяжемся с вами в ближайшее время. Спасибо за обращение!"
+        >
+          <StapAction />
+        </ButtonOpenModal>
       </div>
     </Container>
   );

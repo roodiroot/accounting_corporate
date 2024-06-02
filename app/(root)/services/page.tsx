@@ -1,4 +1,5 @@
 import Container from "@/components/container";
+import ButtonOpenModal from "@/components/sections/absolute/modal/button-open-modal";
 import ServicesSection from "@/components/sections/services/services-section";
 import { ButtonCastom } from "@/components/ui/button";
 
@@ -58,18 +59,18 @@ export default function ServicesPage() {
         <h1 className="text-3xl max-w-2xl lg:text-4xl">
           Актуальные <span className="text-accent">цены</span> на наши услуги.
         </h1>
-        <ButtonCastom className="hidden lg:block pr-6">
-          Посмотреть прайс
-        </ButtonCastom>
+        <ButtonOpenModal className="hidden lg:block ">
+          <ButtonCastom className="pr-6">Получить прайс</ButtonCastom>
+        </ButtonOpenModal>
       </div>
       <ServicesSection
         list={priceList}
         className="mt-12 sm:mt-10"
         bgCard="bg-secondary-bg"
       />
-      <ButtonCastom className="mt-12 sm:mt-10 block pr-6 lg:hidden">
-        Посмотреть прайс
-      </ButtonCastom>
+      <ButtonOpenModal className="lg:hidden block mt-8">
+        <ButtonCastom className="pr-6">Получить прайс</ButtonCastom>
+      </ButtonOpenModal>
     </Container>
   );
 }

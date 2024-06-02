@@ -2,6 +2,8 @@ import Container from "@/components/container";
 import { Icons } from "@/components/icons";
 import { ButtonCastom } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import ButtonOpenModal from "../absolute/modal/button-open-modal";
+import { phone } from "@/lib/phone";
 
 interface BenefitProps extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -39,12 +41,19 @@ const Benefit: React.FC<BenefitProps> = ({ className, ...props }) => {
               вовремя, подготовка к проверке, юридическая помощь, подготовка
               документов
             </p>
-            <ButtonCastom className="bg-accent mt-10">
-              Консультация
-              <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center">
-                <Icons.link className="stroke-primary" />
-              </div>
-            </ButtonCastom>
+            <ButtonOpenModal
+              title="Нужна помощь только сейчас?"
+              description={`Заполните форму обратной связи или позвоните по телефону ${phone(
+                process.env.PHONE_1
+              )}, мы с радостью Вам поможем.`}
+            >
+              <ButtonCastom className="bg-accent mt-10">
+                Консультация
+                <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center">
+                  <Icons.link className="stroke-primary" />
+                </div>
+              </ButtonCastom>
+            </ButtonOpenModal>
           </div>
         </div>
       </div>

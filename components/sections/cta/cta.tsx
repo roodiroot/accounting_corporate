@@ -1,6 +1,8 @@
 import Container from "@/components/container";
 import { ButtonCTA } from "@/components/ui/button";
 import Image from "next/image";
+import ButtonOpenModal from "../absolute/modal/button-open-modal";
+import { phone } from "@/lib/phone";
 
 const CTASection = () => {
   return (
@@ -12,9 +14,14 @@ const CTASection = () => {
             <span className="text-accent">решила каждую из проблем</span> с
             которой Вы могли столкнуться?
           </h3>
-          <ButtonCTA className="mt-10 lg:mt-48 ">
-            Начать сотрудничество
-          </ButtonCTA>
+          <ButtonOpenModal
+            title="Спасибо за доверие!"
+            description="Оставьте ваши данные. Мы свяжемся с Вами в ближайшее время"
+          >
+            <ButtonCTA className="mt-10 lg:mt-48 ">
+              Начать сотрудничество
+            </ButtonCTA>
+          </ButtonOpenModal>
         </div>
         <div className="flex-[50%] pt-[250px] sm:pt-[400px] lg:pt-0">
           <Image
@@ -22,7 +29,7 @@ const CTASection = () => {
             width={1000}
             height={1000}
             src="/images/cta/girl.png"
-            className="absolute -bottom-[2rem]  -right-20 w-[600px] object-cover lg:-top-10 lg:-right-10"
+            className="absolute pointer-events-none -bottom-[2rem]  -right-20 w-[600px] object-cover lg:-top-10 lg:-right-10"
           />
         </div>
       </div>

@@ -3,6 +3,7 @@ import Image from "next/image";
 import { ButtonCastom } from "@/components/ui/button";
 import Benefits from "@/components/sections/hero/benefits";
 import { Icons } from "@/components/icons";
+import ButtonOpenModal from "../absolute/modal/button-open-modal";
 
 const HeroSection = () => {
   return (
@@ -12,27 +13,20 @@ const HeroSection = () => {
           <div className="mt-24 sm:mt-32 lg:mt-0">
             <h1 className="mt-10 text-4xl font-bold sm:text-6xl">
               Надежный <span className="text-accent">эксперт</span> в
-              бухгалтерском учете{" "}
-              {/* <span>
-                <Image
-                  alt="element"
-                  width={174}
-                  height={49}
-                  src="/images/el.png"
-                  className=" absolute inline -mt-1 sm:-mt-3 ml-3 w-auto h-6 sm:h-10"
-                />
-              </span> */}
+              бухгалтерском учете
             </h1>
             <p className="mt-6 text-xl leading-8 text-secondary">
               Мы готовы стать частью вашей команды, обеспечивая надежный
               бухгалтерский учет и стратегическое планирование вашего успеха.
             </p>
-            <ButtonCastom className="bg-accent mt-10">
-              Консультация
-              <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center">
-                <Icons.link className="stroke-primary" />
-              </div>
-            </ButtonCastom>
+            <ButtonOpenModal>
+              <ButtonCastom className="bg-accent mt-10">
+                Консультация
+                <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center">
+                  <Icons.link className="stroke-primary" />
+                </div>
+              </ButtonCastom>
+            </ButtonOpenModal>
           </div>
         </div>
         <div className="mx-auto mt-16 flex max-w-2xl -ml-8 sm:ml-0 sm:mt-24 lg:ml-10 lg:mr-0 lg:-mt-14 lg:max-w-none lg:flex-none xl:ml-32">

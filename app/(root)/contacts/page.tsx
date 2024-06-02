@@ -22,10 +22,55 @@ export default function ContactsPage() {
           />
         </svg>
         <div className="flex-[50%]">
-          <h1 className="text-5xl md:text-6xl">
-            Контакты
-            <Icons.link className="stroke-primary inline ml-4 h-8 w-8 rotate-90" />
-          </h1>
+          <div className="max-w-xl mx-auto lg:mx-0">
+            <h1 className="text-5xl md:text-6xl">
+              Контакты
+              <Icons.link className="stroke-primary inline ml-4 h-8 w-8 rotate-90" />
+            </h1>
+            <div className="space-y-9 mt-9 text-secondary">
+              <address className="text-2xl leading-8 not-italic">
+                <div className="">г.Рузаевка, ул Ленина, д.45</div>
+                <div className="">
+                  <a className="" href="mailto:hello@partnerbuh13.ru">
+                    hello@partnerbuh13.ru
+                  </a>
+                </div>
+                <div>
+                  <a className="" href="tel:79176957962">
+                    +7 (917) 695-79-62
+                  </a>
+                </div>
+              </address>
+              <address className="text-2xl leading-8 not-italic">
+                <div className="">Екатерина Киселева </div>
+                <div className="font-semibold">Директор</div>
+                <div>
+                  <a className="" href="mailto:ooopartner13@yandex.ru">
+                    ooopartner13@yandex.ru
+                  </a>
+                </div>
+                <div>
+                  <a className="" href="tel:79176957962">
+                    +7 (917) 695-79-62
+                  </a>
+                </div>
+              </address>
+              <address className="text-2xl leading-8 not-italic">
+                <div>Даша Барулёва</div>
+                <div className="font-semibold">Бухгалтер</div>
+                <div>
+                  <a className="" href="mailto:hello@partnerbuh13.ru">
+                    ooopartner13@yandex.ru
+                  </a>
+                </div>
+                <div className="">
+                  <a className="" href="tel:+79879997681">
+                    +7 (987) 999-76-81
+                  </a>
+                </div>
+              </address>
+            </div>
+          </div>
         </div>
         <div className="flex-[50%]">
           <div className="max-w-xl mx-auto lg:mx-0">

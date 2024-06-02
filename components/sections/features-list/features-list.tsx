@@ -5,6 +5,8 @@ import FeaturesItem from "./features-item";
 import FeaturesContainer from "./features-container";
 import FeaturesContent from "./features-content";
 import FeaturesContentTwo from "./features-content-two";
+import ButtonOpenModal from "../absolute/modal/button-open-modal";
+import { phone } from "@/lib/phone";
 
 const featuresList = [
   {
@@ -36,13 +38,21 @@ const FeaturesList = () => {
   return (
     <Container className="pt-24 lg:pt-36 overflow-hidden">
       <div className="flex justify-between items-start">
-        <h2 className="text-3xl max-w-2xl lg:text-4xl">
+        <h2 className="text-3xl max-w-2xl mx-auto lg:mx-0 lg:text-4xl">
           Нам <span className="text-accent">доверяют</span> представители
           крупного, среднего и малого бизнесов из любых сфер
         </h2>
-        <ButtonCastom className="hidden lg:block pr-6">
-          Узнать подробнее
-        </ButtonCastom>
+        <ButtonOpenModal
+          className="hidden lg:block"
+          title="Вопрос по услугам?"
+          description={`Заполните форму обратной связи или позвоните по телефону ${phone(
+            process.env.PHONE_1
+          )}, мы с радостью ответим на все вопросы.`}
+        >
+          <ButtonCastom className="hidden lg:block pr-6">
+            Узнать подробнее
+          </ButtonCastom>
+        </ButtonOpenModal>
       </div>
       <div className="relative mt-12 grid grid-cols-1 gap-2 sm:mt-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         <Icons.logo className="absolute -z-10 bottom-1/2 md:bottom-20 left-1/2 -translate-x-1/2 w-[688px] fill-[#EDEDED]" />
@@ -62,7 +72,14 @@ const FeaturesList = () => {
           />
         ))}
         <FeaturesContainer className="hidden md:inline-flex" />
-        <FeaturesContentTwo />
+        <ButtonOpenModal
+          title="Пора сдавать отчетность?"
+          description={`Заполните форму обратной связи или позвоните по телефону ${phone(
+            process.env.PHONE_1
+          )}, мы с радостью Вам поможем.`}
+        >
+          <FeaturesContentTwo />
+        </ButtonOpenModal>
       </div>
     </Container>
   );

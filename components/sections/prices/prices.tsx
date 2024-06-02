@@ -2,6 +2,7 @@ import Container from "@/components/container";
 import { ButtonCastom } from "@/components/ui/button";
 import ServicesSection from "../services/services-section";
 import PriceItemContent from "./price-item-content";
+import ButtonOpenModal from "../absolute/modal/button-open-modal";
 const priceList = [
   {
     id: 1,
@@ -49,20 +50,24 @@ const Prices = () => {
   return (
     <Container>
       <div className="overflow-hidden flex justify-between items-start">
-        <h2 className="text-3xl max-w-2xl lg:text-4xl">
+        <h2 className="text-3xl  max-w-2xl mx-auto lg:mx-0 lg:text-4xl">
           Вам не потребуется оплачивать новые программы.{" "}
           <span className="text-accent">У нас все есть.</span>
         </h2>
-        <ButtonCastom className="hidden lg:block pr-6">
-          Посмотреть прайс
-        </ButtonCastom>
+        <ButtonOpenModal>
+          <ButtonCastom className="hidden lg:block pr-6">
+            Получить прайс
+          </ButtonCastom>
+        </ButtonOpenModal>
       </div>
       <ServicesSection list={priceList} className="mt-12 sm:mt-10">
-        <PriceItemContent
-          title="Бесплатно"
-          description="Для заключивших договор до конца Мая*"
-          className="md:odd:ml-auto md:odd:mr-0 md:even:mr-auto md:even:ml-0 lg:even:mx-auto lg:odd:mx-auto"
-        />
+        <ButtonOpenModal>
+          <PriceItemContent
+            title="Бесплатно"
+            description="Для заключивших договор до конца Мая*"
+            className="md:odd:ml-auto md:odd:mr-0 md:even:mr-auto md:even:ml-0 lg:even:mx-auto lg:odd:mx-auto"
+          />
+        </ButtonOpenModal>
       </ServicesSection>
       <div className="mt-4 text-base max-w-xl text-secondary">
         *Акция действует на <span className="text-accent">первые 2 месяца</span>{" "}
