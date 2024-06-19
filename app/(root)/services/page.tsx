@@ -60,7 +60,8 @@ export const metadata = {
 
 export default async function ServicesPage() {
   const data = await fetch(
-    "http://s9xaqu8t.beget.tech/wp-json/wp/v2/service?acf_format=standard&_fields=id,title,acf"
+    "http://s9xaqu8t.beget.tech/wp-json/wp/v2/service?acf_format=standard&_fields=id,title,acf",
+    { cache: "no-store" }
   );
   const priceList = await data.json();
   return (
