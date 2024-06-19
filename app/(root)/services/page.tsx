@@ -3,54 +3,54 @@ import ButtonOpenModal from "@/components/sections/absolute/modal/button-open-mo
 import ServicesSection from "@/components/sections/services/services-section";
 import { ButtonCastom } from "@/components/ui/button";
 
-const priceList = [
-  {
-    id: 1,
-    title: "Разовая сдача отчётности",
-    price: "от 960 ₽",
-  },
-  {
-    id: 2,
-    title: "Первичные документы",
-    price: "от 190 ₽",
-    description: "за документ",
-  },
-  {
-    id: 3,
-    title: "Восстановление бухгалтерского учёта",
-    price: "от 190 ₽",
-    description: "за операцию",
-  },
-  {
-    id: 4,
-    title: "Возврат по 3-НДФЛ",
-    price: "от 4 370 ₽",
-  },
-  {
-    id: 5,
-    title: "Бухгалтерский, налоговый и кадровый учёт",
-    price: "от 4 005 ₽",
-    description: "в месяц (ИП Патент)",
-  },
-  {
-    id: 6,
-    title: "Бухгалтерский, налоговый и кадровый учёт",
-    price: "от 5 721 ₽",
-    description: "в месяц (ИП на УСН)",
-  },
-  {
-    id: 7,
-    title: "Бухгалтерский, налоговый и кадровый учёт",
-    price: "от 11 300 ₽",
-    description: "в месяц (ООО на ОСНО)",
-  },
-  {
-    id: 8,
-    title: "Бухгалтерский, налоговый и кадровый учёт",
-    price: "от 11 300 ₽",
-    description: "в месяц (ООО на ОСНО)",
-  },
-];
+// const priceList = [
+//   {
+//     id: 1,
+//     title: "Разовая сдача отчётности",
+//     price: "от 960 ₽",
+//   },
+//   {
+//     id: 2,
+//     title: "Первичные документы",
+//     price: "от 190 ₽",
+//     description: "за документ",
+//   },
+//   {
+//     id: 3,
+//     title: "Восстановление бухгалтерского учёта",
+//     price: "от 190 ₽",
+//     description: "за операцию",
+//   },
+//   {
+//     id: 4,
+//     title: "Возврат по 3-НДФЛ",
+//     price: "от 4 370 ₽",
+//   },
+//   {
+//     id: 5,
+//     title: "Бухгалтерский, налоговый и кадровый учёт",
+//     price: "от 4 005 ₽",
+//     description: "в месяц (ИП Патент)",
+//   },
+//   {
+//     id: 6,
+//     title: "Бухгалтерский, налоговый и кадровый учёт",
+//     price: "от 5 721 ₽",
+//     description: "в месяц (ИП на УСН)",
+//   },
+//   {
+//     id: 7,
+//     title: "Бухгалтерский, налоговый и кадровый учёт",
+//     price: "от 11 300 ₽",
+//     description: "в месяц (ООО на ОСНО)",
+//   },
+//   {
+//     id: 8,
+//     title: "Бухгалтерский, налоговый и кадровый учёт",
+//     price: "от 11 300 ₽",
+//     description: "в месяц (ООО на ОСНО)",
+//   },
+// ];
 
 export const metadata = {
   title: "Цены на бухгалтерские услуги",
@@ -58,7 +58,11 @@ export const metadata = {
     "Узнайте цены на профессиональные бухгалтерские услуги от компании Партнер. Прозрачные и конкурентоспособные тарифы на все виды бухгалтерского аутсорсинга.",
 };
 
-export default function ServicesPage() {
+export default async function ServicesPage() {
+  const data = await fetch(
+    "http://s9xaqu8t.beget.tech/wp-json/wp/v2/service?acf_format=standard&_fields=id,title,acf"
+  );
+  const priceList = await data.json();
   return (
     <Container className="pb-32 pt-32 lg:pt-40">
       <div className="overflow-hidden flex justify-between items-start">
