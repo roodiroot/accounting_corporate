@@ -9,7 +9,7 @@ const Features = () => {
   return (
     <Container>
       <div className="relative max-w-xl mx-auto grid grid-cols-1  gap-2 lg:max-w-none  lg:grid-cols-3">
-        <div className="relative row-span-2 aspect-square w-full bg-accent rounded-5xl overflow-hidden">
+        <div className="relative row-span-2 aspect-square w-full bg-gradient-to-br from-accent to-[#2EC97F] rounded-5xl overflow-hidden">
           <Image
             width={600}
             height={600}
@@ -48,7 +48,7 @@ const Features = () => {
             </div>
           </div>
         </div>
-        <div className="relative col-span-2 bg-accent  rounded-5xl overflow-hidden p-2 flex flex-col lg:flex-row lg:gap-8">
+        <div className="relative col-span-2 bg-gradient-to-t from-accent to-[#2EC97F]  rounded-5xl overflow-hidden p-2 flex flex-col lg:flex-row lg:gap-8">
           <svg
             width="413"
             height="179"

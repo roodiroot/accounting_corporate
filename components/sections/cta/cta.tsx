@@ -28,7 +28,7 @@ const CTASection = () => {
             alt="girl_cta"
             width={1000}
             height={1000}
-            src="/images/cta/girl.png"
+            src="/images/cta/girl2.png"
             className="absolute pointer-events-none -bottom-[2rem]  -right-20 w-[600px] object-cover lg:-top-10 lg:-right-10"
           />
         </div>

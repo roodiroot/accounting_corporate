@@ -6,7 +6,7 @@ import { Icons } from "@/components/icons";
 const FeaturesContentTwo = () => {
   return (
     <FeaturesContainer className=" shadow-lg rounded-5xl">
-      <div className="relative overflow-hidden rounded-5xl w-full h-full p-2 bg-accent flex flex-col">
+      <div className="relative overflow-hidden rounded-5xl w-full h-full p-2 bg-gradient-to-br from-accent to-[#2EC97F] flex flex-col">
         <div className="w-full h-1/2 rounded-4xl relative p-6 overflow-hidden">
           <Image
             alt="girl_bg"

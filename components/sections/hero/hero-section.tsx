@@ -20,7 +20,7 @@ const HeroSection = () => {
               бухгалтерский учет и стратегическое планирование вашего успеха.
             </p>
             <ButtonOpenModal>
-              <ButtonCastom className="bg-accent mt-10">
+              <ButtonCastom className="bg-gradient-to-br from-accent to-[#2EC97F] mt-10">
                 Консультация
                 <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center">
                   <Icons.link className="stroke-primary" />
@@ -35,7 +35,7 @@ const HeroSection = () => {
               alt="main_img"
               width={750}
               height={850}
-              src="/images/main_img.png"
+              src="/images/main_img3.png"
               className="h-auto max-w-full w-[32rem] sm:w-[48rem]"
             />
           </div>

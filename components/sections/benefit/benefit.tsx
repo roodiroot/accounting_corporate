@@ -47,7 +47,7 @@ const Benefit: React.FC<BenefitProps> = ({ className, ...props }) => {
                 process.env.PHONE_1
               )}, мы с радостью Вам поможем.`}
             >
-              <ButtonCastom className="bg-accent mt-10">
+              <ButtonCastom className="bg-gradient-to-br from-accent to-[#2EC97F] mt-10 ">
                 Консультация
                 <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center">
                   <Icons.link className="stroke-primary" />

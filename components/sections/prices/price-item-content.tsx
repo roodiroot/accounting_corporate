@@ -20,7 +20,7 @@ const PriceItemContent: React.FC<PriceItemContentProps> = ({
       {...props}
       className={cn("shadow-lg rounded-5xl", className)}
     >
-      <div className="relative bg-accent rounded-5xl overflow-hidden p-8 w-full h-full flex flex-col">
+      <div className="relative bg-gradient-to-br from-accent to-[#2EC97F] rounded-5xl overflow-hidden p-8 w-full h-full flex flex-col">
         <Image
           width={560}
           height={560}

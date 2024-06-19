@@ -89,7 +89,7 @@ const FormClient: React.FC<FormClientProps> = ({ className, ...props }) => {
           )}
         />
         <div className="">
-          <ButtonCastom className="bg-accent mt-2">
+          <ButtonCastom className="bg-gradient-to-br from-accent to-[#2EC97F] mt-2">
             Отправить
             <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center">
               <Icons.link className="stroke-primary" />

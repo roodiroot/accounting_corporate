@@ -9,7 +9,7 @@ const StapAction = () => {
         alt="bg-step_4"
         width={400}
         height={400}
-        src="/images/steps/bg.png"
+        src="/images/steps/bg2.png"
         className="absolute -z-10 top-0 left-0 w-full h-full object-cover"
       />
       <div className="flex-1 flex justify-between">
