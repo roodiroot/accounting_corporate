@@ -4,9 +4,7 @@ import ServiceItem from "./service-item";
 interface ServiceItemProps extends React.HTMLAttributes<HTMLDivElement> {
   list: {
     id: string | number;
-    title: string;
-    price: string;
-    description?: string;
+    acf: { title: string; price: string; description?: string };
   }[];
   bgCard?: string;
 }
@@ -28,9 +26,9 @@ const ServicesSection: React.FC<ServiceItemProps> = ({
       {list.map((item) => (
         <ServiceItem
           key={item.id}
-          title={item.title}
-          price={item.price}
-          description={item.description}
+          title={item.acf.title}
+          price={item.acf.price}
+          description={item.acf.description}
           className="md:odd:ml-auto md:odd:mr-0 md:even:mr-auto md:even:ml-0 lg:even:mx-auto lg:odd:mx-auto"
           bgCard={bgCard}
         />
