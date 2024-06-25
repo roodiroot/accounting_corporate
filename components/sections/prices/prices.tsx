@@ -4,55 +4,10 @@ import ServicesSection from "../services/services-section";
 import PriceItemContent from "./price-item-content";
 import ButtonOpenModal from "../absolute/modal/button-open-modal";
 import { phone } from "@/lib/phone";
-const priceList = [
-  {
-    id: 1,
-    title: "Разовая сдача отчётности",
-    price: "от 960 ₽",
-  },
-  {
-    id: 2,
-    title: "Первичные документы",
-    price: "от 190 ₽",
-    description: "за документ",
-  },
-  {
-    id: 3,
-    title: "Восстановление бухгалтерского учёта",
-    price: "от 190 ₽",
-    description: "за операцию",
-  },
-  {
-    id: 4,
-    title: "Возврат по 3-НДФЛ",
-    price: "от 4 370 ₽",
-  },
-  {
-    id: 5,
-    title: "Бухгалтерский, налоговый и кадровый учёт",
-    price: "от 4 005 ₽",
-    description: "в месяц (ИП Патент)",
-  },
-  {
-    id: 6,
-    title: "Бухгалтерский, налоговый и кадровый учёт",
-    price: "от 5 721 ₽",
-    description: "в месяц (ИП на УСН)",
-  },
-  {
-    id: 7,
-    title: "Бухгалтерский, налоговый и кадровый учёт",
-    price: "от 11 300 ₽",
-    description: "в месяц (ООО на ОСНО)",
-  },
-];
+import { getServices } from "@/actions/get-service";
 
 const Prices = async () => {
-  const data = await fetch(
-    "http://s9xaqu8t.beget.tech/wp-json/wp/v2/service?acf_format=standard&_fields=id,title,acf",
-    { cache: "no-store" }
-  );
-  const priceList = await data.json();
+  const servicesList = await getServices({ limit: 7 });
 
   return (
     <Container>
@@ -67,18 +22,18 @@ const Prices = async () => {
           </ButtonCastom>
         </ButtonOpenModal>
       </div>
-      <ServicesSection list={priceList} className="mt-10 sm:mt-8">
+      <ServicesSection list={servicesList} className="mt-10 sm:mt-8">
         <ButtonOpenModal>
           <PriceItemContent
             title="Бесплатно"
-            description="Для заключивших договор до конца Мая*"
+            description="Для заключивших договор до конца лета*"
             className="md:odd:ml-auto md:odd:mr-0 md:even:mr-auto md:even:ml-0 lg:even:mx-auto lg:odd:mx-auto"
           />
         </ButtonOpenModal>
       </ServicesSection>
       <div className="mt-4 text-base max-w-xl text-secondary">
         *Акция действует на <span className="text-accent">первые 2 месяца</span>{" "}
-        обслуживания, для компаний заключивших договор до 30.05.2025.
+        обслуживания, для компаний заключивших договор до 30.08.2025.
         Подробности акции уточняйте{" "}
         <span className="text-accent">
           {" "}

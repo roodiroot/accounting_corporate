@@ -31,7 +31,7 @@ const PriceItemContent: React.FC<PriceItemContentProps> = ({
         <h3 className="relative z-10 text-4xl text-white">{title}</h3>
         <div className="flex-1 relative z-10 flex flex-col ">
           <p className="text-2xl text-white flex-1 flex items-end">
-            Для заключивших договор до конца Мая*
+            {description}
           </p>
           <div className="">
             <ButtonCastom className="bg-white mt-5 text-accent">

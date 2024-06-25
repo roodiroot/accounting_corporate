@@ -1,56 +1,8 @@
 import Container from "@/components/container";
-import ButtonOpenModal from "@/components/sections/absolute/modal/button-open-modal";
-import ServicesSection from "@/components/sections/services/services-section";
+import { getServices } from "@/actions/get-service";
 import { ButtonCastom } from "@/components/ui/button";
-
-// const priceList = [
-//   {
-//     id: 1,
-//     title: "Разовая сдача отчётности",
-//     price: "от 960 ₽",
-//   },
-//   {
-//     id: 2,
-//     title: "Первичные документы",
-//     price: "от 190 ₽",
-//     description: "за документ",
-//   },
-//   {
-//     id: 3,
-//     title: "Восстановление бухгалтерского учёта",
-//     price: "от 190 ₽",
-//     description: "за операцию",
-//   },
-//   {
-//     id: 4,
-//     title: "Возврат по 3-НДФЛ",
-//     price: "от 4 370 ₽",
-//   },
-//   {
-//     id: 5,
-//     title: "Бухгалтерский, налоговый и кадровый учёт",
-//     price: "от 4 005 ₽",
-//     description: "в месяц (ИП Патент)",
-//   },
-//   {
-//     id: 6,
-//     title: "Бухгалтерский, налоговый и кадровый учёт",
-//     price: "от 5 721 ₽",
-//     description: "в месяц (ИП на УСН)",
-//   },
-//   {
-//     id: 7,
-//     title: "Бухгалтерский, налоговый и кадровый учёт",
-//     price: "от 11 300 ₽",
-//     description: "в месяц (ООО на ОСНО)",
-//   },
-//   {
-//     id: 8,
-//     title: "Бухгалтерский, налоговый и кадровый учёт",
-//     price: "от 11 300 ₽",
-//     description: "в месяц (ООО на ОСНО)",
-//   },
-// ];
+import ServicesSection from "@/components/sections/services/services-section";
+import ButtonOpenModal from "@/components/sections/absolute/modal/button-open-modal";
 
 export const metadata = {
   title: "Цены на бухгалтерские услуги",
@@ -59,11 +11,7 @@ export const metadata = {
 };
 
 export default async function ServicesPage() {
-  const data = await fetch(
-    "http://s9xaqu8t.beget.tech/wp-json/wp/v2/service?acf_format=standard&_fields=id,title,acf",
-    { cache: "no-store" }
-  );
-  const priceList = await data.json();
+  const servicesList = await getServices({});
   return (
     <Container className="pb-32 pt-32 lg:pt-40">
       <div className="overflow-hidden flex justify-between items-start">
@@ -75,7 +23,7 @@ export default async function ServicesPage() {
         </ButtonOpenModal>
       </div>
       <ServicesSection
-        list={priceList}
+        list={servicesList}
         className="mt-6 sm:mt-7"
         bgCard="bg-secondary-bg"
       />

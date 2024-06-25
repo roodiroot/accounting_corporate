@@ -19,10 +19,12 @@ import { Input } from "@/components/ui/input";
 import { sendMessagePopup } from "@/actions/sender";
 import { ButtonCastom } from "@/components/ui/button";
 import InputPhoneMask from "@/components/ui/input-phone-mask";
+import useModal from "@/hooks/use-modal";
 
 interface FormClientProps extends React.HTMLAttributes<HTMLFormElement> {}
 
 const FormClient: React.FC<FormClientProps> = ({ className, ...props }) => {
+  const { onClose } = useModal();
   const form = useForm<z.infer<typeof formSectionSchema>>({
     resolver: zodResolver(formSectionSchema),
     defaultValues: {
@@ -33,7 +35,9 @@ const FormClient: React.FC<FormClientProps> = ({ className, ...props }) => {
 
   async function onSubmit(values: z.infer<typeof formSectionSchema>) {
     await sendMessagePopup(values)
-      .then((d) => {})
+      .then((d) => {
+        onClose();
+      })
       .finally(() => {
         form.reset();
       });
