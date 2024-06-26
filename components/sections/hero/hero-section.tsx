@@ -35,7 +35,7 @@ const HeroSection = () => {
               alt="main_img"
               width={750}
               height={850}
-              src="/images/main_img3.png"
+              src="/images/main_img.png"
               className="h-auto max-w-full w-[32rem] sm:w-[48rem]"
             />
           </div>
