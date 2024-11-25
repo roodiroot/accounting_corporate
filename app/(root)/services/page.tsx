@@ -12,6 +12,7 @@ export const metadata = {
 
 export default async function ServicesPage() {
   const servicesList = await getServices({});
+
   return (
     <Container className="pb-32 pt-32 lg:pt-40">
       <div className="overflow-hidden flex justify-between items-start">
