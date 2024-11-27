@@ -30,7 +30,9 @@ async function fetchAPI(query = "", { variables }: Record<string, any> = {}) {
 export async function getAllService(limit?: number): Promise<Service[]> {
   const response = await fetchAPI(`
     query SinglePost {
-        serves(first: ${limit || 100}) {
+        services(first: ${
+          limit || 100
+        }, where: {orderby: {field: DATE, order: ASC}}) {
             edges {
                 node {
                     serviceField {
@@ -44,7 +46,7 @@ export async function getAllService(limit?: number): Promise<Service[]> {
     }
   `);
 
-  return response.serves.edges.map(
+  return response.services.edges.map(
     (element: { node: { serviceField: Service } }) => {
       return element.node.serviceField;
     }
