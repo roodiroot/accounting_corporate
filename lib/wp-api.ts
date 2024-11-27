@@ -9,14 +9,12 @@ export interface Service {
 async function fetchAPI(query = "", { variables }: Record<string, any> = {}) {
   const headers = {
     "Content-Type": "application/json",
-    "Cache-Control": "no-cache, no-store, must-revalidate", // Запрещает кеширование
-    Pragma: "no-cache", // Для поддержки старых браузеров
-    Expires: "0", // Истекает немедленно
   };
 
   const res = await fetch(API_URL, {
     headers,
     method: "POST",
+    cache: "no-cache",
     body: JSON.stringify({
       query,
       variables,
