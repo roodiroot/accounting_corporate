@@ -14,7 +14,7 @@ const Benefits = () => {
           <div className="flex justify-center bg-secondary-bg rounded-5xl px-4 py-8">
             <div className="flex gap-3 items-center">
               <div className="text-[75px] font-bold">
-                c20<span className="text-accent">10</span>
+                c20<span className="text-accent">18</span>
               </div>
               <p className="text-secondary">Года мы работаем с клиентами</p>
             </div>
