@@ -3,34 +3,34 @@ import { MetadataRoute } from "next";
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: "https://example.ru",
+      url: "https://partner-biznes.ru",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 1,
     },
     {
-      url: "https://example.ru/servises",
+      url: "https://partner-biznes.ru/servises",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 1,
     },
     {
-      url: "https://example.ru/about",
+      url: "https://partner-biznes.ru/about",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 1,
     },
     {
-      url: "https://example.ru/contacts",
+      url: "https://partner-biznes.ru/contacts",
       lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 1,
     },
-    {
-      url: "https://example.ru/doc/privacy-policy",
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 1,
-    },
+    // {
+    //   url: "https://partner-biznes.ru/doc/privacy-policy",
+    //   lastModified: new Date(),
+    //   changeFrequency: "yearly",
+    //   priority: 1,
+    // },
   ];
 }

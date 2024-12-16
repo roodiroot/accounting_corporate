@@ -1,4 +1,4 @@
 User-Agent: *
 Allow: /
-Disallow: /private/
-Sitemap: https://example.ru/sitemap.xml
+Disallow: /doc/
+Sitemap: https://partner-biznes.ru/sitemap.xml

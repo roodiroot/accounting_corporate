@@ -1,11 +1,14 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 
-import "./globals.css";
-import { gilroy, gropled } from "./fonts";
+import { gilroy, gropled } from "@/app/fonts";
+import { MetrikYA } from "@/components/utils/metrica-ya";
 import AllAbsolute from "@/components/sections/absolute/all-absolute";
 
+import "./globals.css";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://example.ru"),
+  metadataBase: new URL("https://partner-biznes.ru"),
   title: {
     template: "%s | Партнер - Аутсорсинг бухгалтерских услуг",
     default: "Партнер - Аутсорсинг бухгалтерских услуг",
@@ -23,6 +26,9 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body className={`${gropled.variable} ${gilroy.variable}`}>
+        <Suspense>
+          <MetrikYA />
+        </Suspense>
         <AllAbsolute />
         {children}
       </body>
