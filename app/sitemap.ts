@@ -9,7 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: "https://partner-biznes.ru/servises",
+      url: "https://partner-biznes.ru/services",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 1,
