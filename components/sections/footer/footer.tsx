@@ -83,7 +83,9 @@ const Footer = () => {
           </div>
         </div>
         <div className="pt-8 pb-8 md:pb-16 flex flex-col-reverse gap-10 md:gap-4 md:flex-row text-white/50 text-base">
-          <p className="text-base">© ООО Партнер 2024. All right reserved</p>
+          <p className="text-base">
+            © ООО Партнер 2024 - 2025. All right reserved
+          </p>
           <div className=" flex flex-col md:flex-row md:gap-x-8 md:ml-auto">
             <a href="https://matryoshka-studio.ru/">Разработка сайта</a>
             <Link href="/doc/privacy-policy">
