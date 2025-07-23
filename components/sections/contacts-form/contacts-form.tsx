@@ -20,6 +20,7 @@ import { ButtonCastom } from "@/components/ui/button";
 import InputPhoneMask from "@/components/ui/input-phone-mask";
 import { Textarea } from "@/components/ui/textarea";
 import { sendMessageFedback } from "@/actions/sender";
+import { Switch } from "@/components/ui/switch";
 
 interface ContactsFormProps extends React.HTMLAttributes<HTMLFormElement> {}
 
@@ -31,6 +32,7 @@ const ContactsForm: React.FC<ContactsFormProps> = ({ className, ...props }) => {
       phone: "",
       email: "",
       message: "",
+      policy: false,
     },
   });
 
@@ -119,6 +121,36 @@ const ContactsForm: React.FC<ContactsFormProps> = ({ className, ...props }) => {
                 <Textarea rows={4} {...field} />
               </FormControl>
               <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="policy"
+          render={({ field }) => (
+            <FormItem className="flex items-center">
+              <FormControl>
+                <Switch
+                  checked={field.value}
+                  onCheckedChange={field.onChange}
+                />
+              </FormControl>
+              <div
+                className={cn(
+                  "ml-4 text-sm",
+                  form.formState.errors.policy && "text-red-600 font-bold"
+                )}
+              >
+                Я даю согласие на обработку{" "}
+                <a
+                  className="text-accent font-bold"
+                  target="_blank"
+                  href="/docs/pd-consent"
+                >
+                  персональных данных
+                </a>
+                .
+              </div>
             </FormItem>
           )}
         />

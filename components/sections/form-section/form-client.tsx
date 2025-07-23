@@ -20,6 +20,7 @@ import { sendMessagePopup } from "@/actions/sender";
 import { ButtonCastom } from "@/components/ui/button";
 import InputPhoneMask from "@/components/ui/input-phone-mask";
 import useModal from "@/hooks/use-modal";
+import { Switch } from "@/components/ui/switch";
 
 interface FormClientProps extends React.HTMLAttributes<HTMLFormElement> {}
 
@@ -30,6 +31,7 @@ const FormClient: React.FC<FormClientProps> = ({ className, ...props }) => {
     defaultValues: {
       name: "",
       phone: "",
+      policy: false,
     },
   });
 
@@ -89,6 +91,36 @@ const FormClient: React.FC<FormClientProps> = ({ className, ...props }) => {
                 </div>
               )}
               <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="policy"
+          render={({ field }) => (
+            <FormItem className="flex items-center">
+              <FormControl>
+                <Switch
+                  checked={field.value}
+                  onCheckedChange={field.onChange}
+                />
+              </FormControl>
+              <div
+                className={cn(
+                  "ml-4 text-sm",
+                  form.formState.errors.policy && "text-red-600 font-bold"
+                )}
+              >
+                Я даю согласие на обработку{" "}
+                <a
+                  className="text-accent font-bold"
+                  target="_blank"
+                  href="/docs/pd-consent"
+                >
+                  персональных данных
+                </a>
+                .
+              </div>
             </FormItem>
           )}
         />
