@@ -5,7 +5,6 @@ import { Button, ButtonCastom } from "@/components/ui/button";
 import { Icons } from "@/components/icons";
 import { Phone } from "lucide-react";
 import FormFooter from "./form-footer";
-import Link from "next/link";
 import ButtonOpenModal from "../absolute/modal/button-open-modal";
 
 const Footer = () => {

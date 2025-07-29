@@ -3,7 +3,7 @@ import ServiceItem from "./service-item";
 import { Service } from "@/lib/wp-api";
 
 interface ServiceItemProps extends React.HTMLAttributes<HTMLDivElement> {
-  list?: Service[];
+  list?: Service[] | null;
   bgCard?: string;
 }
 

@@ -30,7 +30,7 @@ async function fetchAPI(query = "", { variables }: Record<string, any> = {}) {
 }
 
 //Получаем все посты
-export async function getAllService(limit?: number): Promise<Service[]> {
+export async function getAllService(limit?: number): Promise<Service[] | null> {
   const response = await fetchAPI(`
     query SinglePost {
         services(first: ${
@@ -48,6 +48,8 @@ export async function getAllService(limit?: number): Promise<Service[]> {
         }
     }
   `);
+
+  if (!response) return null;
 
   return response.services.edges.map(
     (element: { node: { serviceField: Service } }) => {
