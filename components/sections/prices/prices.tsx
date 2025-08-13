@@ -31,7 +31,7 @@ const Prices = async () => {
           />
         </ButtonOpenModal>
       </ServicesSection>
-      <div className="mt-4 text-base max-w-xl text-secondary">
+      <p className="mt-4 text-sm max-w-xl text-secondary">
         *Акция действует на <span className="text-accent">первые 2 месяца</span>{" "}
         обслуживания, для компаний заключивших договор до 30.08.2025.
         Подробности акции уточняйте{" "}
@@ -42,7 +42,12 @@ const Prices = async () => {
             {phone(process.env.PHONE_1)}
           </a>
         </span>
-      </div>
+      </p>
+      <p className="text-sm text-muted-foreground mt-6 max-w-xl">
+        **Данное предложение{" "}
+        <span className="font-bold">не является публичной офертой</span>,
+        окончательная цена будет уточнена менеджером во время консультации.
+      </p>
     </Container>
   );
 };

@@ -28,6 +28,11 @@ export default async function ServicesPage() {
         className="mt-6 sm:mt-7"
         bgCard="bg-secondary-bg"
       />
+      <p className="text-sm text-muted-foreground mt-6">
+        Данное предложение{" "}
+        <span className="font-bold">не является публичной офертой</span>,
+        окончательная цена будет уточнена менеджером во время консультации.
+      </p>
       <ButtonOpenModal className="lg:hidden block mt-8">
         <ButtonCastom className="pr-6">Получить прайс</ButtonCastom>
       </ButtonOpenModal>
